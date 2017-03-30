@@ -38,4 +38,19 @@ print " Sent:	",Packet
 
 print "Handshake complete. "
 
-# ------------------------------------------------------------- 
+# ----------------------------- SUBSCRIPTION MESSAGE ------------------------- 
+
+SubscriptionMessage = (82, 3, 1, 0, 2, 0,7007, 0xffffffffffffffff,0xffffffffffffffff, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16, 0xffffffffffffffff,0xffffffffffffffff, 0)
+
+Wrapper2 = struct.Struct('!'+'I B I b I 2Q 2Q 16B 2Q Q')
+Packet2 = Wrapper2.pack(*SubscriptionMessage)
+
+print " Subscription request sessage sent. "
+
+NewSocket.sendall(Packet2)
+
+
+data = NewSocket.recv(90)
+#print " Got :	", data
+
+# ----------------------------- EXTRACT SAMPLES ---------------
