@@ -15,9 +15,10 @@ import time
 import sys
 from termcolor import colored
 
-import HandshakeMessage as handshake
-import SolverAggregatorInterface as interface
-import SubscriptionMessage as subs
+import messages.HandshakeMessage as handshake
+import messages.SubscriptionMessage as subs
+import interface.SolverAggregatorInterface as interface
+
 
 BadExit = False
 

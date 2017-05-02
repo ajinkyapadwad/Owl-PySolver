@@ -9,8 +9,8 @@ GRAIL FAKE SENSOR
 """
 import socket
 import struct
-import HandshakeMessage
-import SubscriptionMessage
+import messages.HandshakeMessage
+import messages.SubscriptionMessage
 from termcolor import colored
 import time
 
