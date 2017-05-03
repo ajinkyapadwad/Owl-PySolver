@@ -23,10 +23,9 @@ import interface.SolverAggregatorInterface as interface
 BadExit = False
 
 def main(host,port):
+	
 	try:
 	
-	# MessageBuffer = 100
-
 		interface.SetHost(host)
 		interface.SetPort(port)
 
@@ -42,7 +41,22 @@ def main(host,port):
 
 	 		print colored('	Sending Subscription Request..', 'cyan')
 
+
+			MessageID = 3
+			Rules = 1
+			Physical = 0
+			Transmitters = 2
+			SensorPort = 7007
+
+			subs.SetMessageID(MessageID)
+			subs.SetRules(Rules)
+			subs.SetPhysicalLayer(Physical)
+			subs.SetTransmitters(Transmitters)
+			subs.SensorPort(SensorPort)
+
+
 	 		subs.RequestSubscription()
+
 
 			print colored('\n 	Now Extracting Sensor Data...', 'blue')
 			time.sleep(1)
@@ -54,6 +68,9 @@ def main(host,port):
 		ErrorText = colored('\n\n 	One or more errors have occurred !\n', 'red')
 		print(ErrorText)
 		print "ERROR:", Err
+		# exc_type, exc_obj, exc_tb = sys.exc_info()
+		# fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+		# print(exc_type, fname, exc_tb.tb_lineno)
 		print " 	socket disconnected\n"
 		BadExit = True
 

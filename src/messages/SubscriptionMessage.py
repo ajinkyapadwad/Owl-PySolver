@@ -11,15 +11,48 @@ from termcolor import colored
 import struct
 import socket
 
+# default solver message format
 
-	# solver message format
 MessageLength = 82
+Mask = 0xffffffffffffffff
+
 MessageID = 3
 Rules = 1
 Physical = 0
 Transmitters = 2
 SensorPort = 7007
-Mask = 0xffffffffffffffff
+
+
+
+def SetMessageID(newID):
+	try:
+		MessageID = newID
+	except:
+		print " Error at setting MessageID "
+
+def SetRules(newRules):
+	try:
+		Rules = newRules
+	except:
+		print " Error at setting Rules "
+
+def SetPhysicalLayer(newPhysical):
+	try:
+		Physical = newPhysical
+	except:
+		print " Error at setting Physical Layer "
+
+def SetTransmitters(newTransmitters):
+	try:
+		Transmitters = newTransmitters
+	except:
+		print " Error at setting Transmitters "
+
+def SetSensorPort(newPort):
+	try:
+		SensorPort = newPort
+	except:
+		print " Error at setting SensorPort "
 
 def RequestSubscription():
 	import interface.SolverAggregatorInterface as interface
