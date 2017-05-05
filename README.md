@@ -1,5 +1,5 @@
 OWL PLATFORM @ RUTGERS WINLAB  
-PYTHON LIBRARY : SENSOR  
+PYTHON LIBRARY : SOLVER  
 AUTHOR : AJINKYA PADWAD  
 SPRING 2017  
 
@@ -8,7 +8,7 @@ SOURCE: https://git.owlplatform.com/wiki/index.php/Category:GRAIL_RTLS_v3_Docume
 GRAIL FAKE SOLVER
 =================
 
-Python alternative library for the existing Java Fakesensor.
+Python alternative library for the existing Java Fakesolver.
 
 -----------------------------------------------------------------
 
@@ -68,19 +68,19 @@ __Running the python library :__
 
 2. New terminal - run the Fakesensor client :
 	
-	python fakesensor.py <hostname> <port-number>
+	python fakesensor.py [hostname] [port-number]
 
 	Default :	__python fakesensor.py localhost 7007__
 
-	On successful run, the fakesensor continually sends samples at interval of 1 second.
+On successful run, the fakesensor continually sends samples at interval of 1 second.
 
 3. New terminal - run the Fakesolver client :
 	
-	python fakesolver.py <hostname> <port-number>
+	python fakesolver.py [hostname] [port-number]
 
 	Default :	__python fakesolver.py localhost 7008__
 
-	On successful run, the fakesolver continually extracts samples at interval of 1 second.
+On successful run, the fakesolver continually extracts samples at interval of 1 second.
 
 -----------------------------------------------------------------
 
