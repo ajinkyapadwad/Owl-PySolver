@@ -52,7 +52,7 @@ def main(host,port):
 			subs.SetRules(Rules)
 			subs.SetPhysicalLayer(Physical)
 			subs.SetTransmitters(Transmitters)
-			subs.SensorPort(SensorPort)
+			subs.SetSensorPort(SensorPort)
 
 
 	 		subs.RequestSubscription()
